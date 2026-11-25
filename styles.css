@@ -1,0 +1,71 @@
+:root {
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", system-ui, sans-serif;
+  color: #30251f;
+  background: #f4eee4;
+  font-synthesis: none;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: radial-gradient(circle at 100% 0, #edd5b8 0 15rem, transparent 15.1rem), #f4eee4; }
+button, select { font: inherit; }
+.app-shell { width: min(100%, 720px); margin: 0 auto; padding: max(20px, env(safe-area-inset-top)) 18px max(36px, env(safe-area-inset-bottom)); }
+.topbar { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; }
+.brand-mark { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 16px 4px 16px 4px; background: #b93b24; color: #fff8ea; font-family: serif; font-size: 25px; font-weight: 800; box-shadow: 0 8px 20px #8c2c1b30; }
+.eyebrow { margin: 0 0 2px; color: #956c42; font-size: .78rem; font-weight: 700; letter-spacing: .14em; }
+h1 { margin: 0; font-family: serif; font-size: clamp(1.5rem, 6vw, 2rem); letter-spacing: .04em; }
+.search-card, .result-card { position: relative; overflow: hidden; padding: 24px; border: 1px solid #dfcdb5; border-radius: 24px 8px 24px 8px; background: #fffcf7; box-shadow: 0 15px 40px #66503b14; }
+.map-accent { margin: -24px -24px 22px; padding: 26px 24px; background: linear-gradient(120deg, #b93b24, #d67837); color: white; font-family: serif; font-size: clamp(1.4rem, 6vw, 2rem); font-weight: 800; line-height: 1.35; }
+.search-card h2, .quick-section h2, .result-card h2 { margin: 0; font-size: 1.05rem; }
+form { margin-top: 18px; }
+label { display: block; margin: 16px 0 7px; font-size: .9rem; font-weight: 700; }
+.select-wrap { position: relative; }
+.select-wrap::after { content: "⌄"; position: absolute; right: 16px; top: 50%; transform: translateY(-55%); color: #b93b24; pointer-events: none; font-weight: 800; }
+select { width: 100%; min-height: 52px; padding: 0 44px 0 15px; border: 1px solid #cab79c; border-radius: 12px; appearance: none; background: #fff; color: #30251f; font-size: 1rem; }
+select:focus, button:focus-visible { outline: 3px solid #eaaa714f; outline-offset: 2px; }
+select:disabled { background: #f1eee9; color: #8a8177; }
+button { min-height: 54px; border: 0; border-radius: 13px; cursor: pointer; }
+form button { width: 100%; margin-top: 22px; background: #b93b24; color: #fff; font-weight: 800; box-shadow: 0 10px 22px #b93b2430; }
+form button:active, .quick-chip:active { transform: translateY(1px); }
+.hint { margin: 15px 0 0; color: #7b7065; font-size: .78rem; text-align: center; }
+.result-card { margin-top: 18px; }
+.result-kicker { margin: 0 0 5px; color: #b93b24; font-size: .8rem; font-weight: 800; letter-spacing: .08em; }
+.result-note { margin: 10px 0 0; padding: 11px 12px; border-left: 4px solid #d67837; background: #fff6e8; color: #67594d; font-size: .82rem; line-height: 1.65; }
+.product-list { display: grid; gap: 10px; margin-top: 18px; }
+.product { display: grid; grid-template-columns: 48px minmax(0, 1fr); align-items: start; gap: 12px; padding: 13px; border-radius: 13px; background: #f8f1e7; }
+.product-icon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: #fff; font-size: 1.55rem; }
+.product h3 { margin: 0 0 3px; font-size: 1rem; }
+.product p { margin: 0; color: #71675e; font-size: .84rem; line-height: 1.5; }
+.order-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.order-links a { display: inline-flex; align-items: center; min-height: 38px; padding: 7px 11px; border: 1px solid #cfb99d; border-radius: 9px; background: #fff; color: #8f2f20; font-size: .78rem; font-weight: 800; text-decoration: none; }
+.order-links a:focus-visible { outline: 3px solid #eaaa714f; outline-offset: 2px; }
+.order-links a:hover { background: #fff7ea; }
+.quick-section { margin-top: 28px; }
+.section-heading { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
+.section-heading span { color: #8d7965; font-size: .78rem; }
+.quick-list { display: flex; gap: 9px; overflow-x: auto; padding: 2px 2px 9px; scrollbar-width: thin; }
+.quick-chip { flex: 0 0 auto; min-height: 44px; padding: 0 16px; border: 1px solid #d5c0a5; background: #fffaf1; color: #59493b; font-size: .88rem; font-weight: 700; }
+.membership-section { margin-top: 30px; padding: 24px; border: 1px solid #dfcdb5; border-radius: 24px 8px 24px 8px; background: #fffcf7; box-shadow: 0 15px 40px #66503b14; }
+.membership-heading { align-items: center; gap: 12px; margin-bottom: 10px; }
+.membership-kicker { margin: 0 0 4px; color: #b93b24; font-size: .76rem; font-weight: 800; letter-spacing: .1em; }
+.coming-badge { flex: 0 0 auto; padding: 6px 9px; border-radius: 999px; background: #f4dfbd; color: #76512d; font-size: .72rem; font-weight: 800; }
+.membership-lead { margin: 0; color: #67594d; font-size: .88rem; line-height: 1.7; }
+.plan-list { display: grid; gap: 12px; margin-top: 18px; }
+.plan-card { padding: 18px; border: 1px solid #dfcdb5; border-radius: 16px; background: #fff; }
+.supporter-plan { border: 2px solid #b93b24; background: #fff9f2; }
+.plan-label { margin: 0; color: #846b54; font-size: .86rem; font-weight: 800; }
+.plan-price { display: flex; align-items: baseline; gap: 8px; margin: 5px 0 12px; }
+.plan-price strong { color: #30251f; font-family: serif; font-size: 1.7rem; }
+.plan-price span { color: #7b7065; font-size: .78rem; }
+.plan-card ul { margin: 0; padding-left: 1.3em; color: #594d43; font-size: .86rem; line-height: 1.9; }
+.plan-card button { width: 100%; min-height: 46px; margin-top: 14px; background: #e4ddd3; color: #766d64; font-size: .88rem; font-weight: 800; cursor: not-allowed; }
+.membership-note { margin: 14px 0 0; color: #7b7065; font-size: .76rem; line-height: 1.6; }
+@media (min-width: 640px) {
+  .app-shell { padding-left: 28px; padding-right: 28px; }
+  .search-card, .result-card { padding: 30px; }
+  .map-accent { margin: -30px -30px 26px; padding: 32px 30px; }
+  .membership-section { padding: 30px; }
+  .plan-list { grid-template-columns: 1fr 1fr; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .result-card:not([hidden]) { animation: rise .35s ease-out; }
+  @keyframes rise { from { opacity: 0; transform: translateY(8px); } }
+}

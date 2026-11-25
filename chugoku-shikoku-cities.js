@@ -1,0 +1,112 @@
+const chugokuShikokuCityAdditions = {
+  "鳥取県": {
+    "鳥取市": specialties("二十世紀梨", "砂丘らっきょう"),
+    "米子市": specialties("白ねぎ", "どんぐりコロコロ豚"),
+    "倉吉市": specialties("極実すいか", "打吹公園だんご"),
+    "境港市": specialties("松葉がに", "境港サーモン")
+  },
+  "島根県": {
+    "松江市": specialties("宍道湖しじみ", "若草"),
+    "浜田市": specialties("どんちっちアジ", "赤てん"),
+    "出雲市": specialties("出雲そば", "出西しょうが"),
+    "益田市": specialties("益田メロン", "ゆず加工品"),
+    "大田市": specialties("三瓶そば", "あなご"),
+    "安来市": specialties("安来節どじょう掬いまんじゅう", "伯太の母里焼"),
+    "江津市": specialties("石見焼", "まる姫ポーク"),
+    "雲南市": specialties("奥出雲和牛", "木次乳製品")
+  },
+  "岡山県": {
+    "岡山市": specialties("白桃", "きびだんご"),
+    "倉敷市": specialties("むらすずめ", "連島れんこん"),
+    "津山市": specialties("津山ホルモンうどん", "干し肉"),
+    "玉野市": specialties("たまの温玉めし", "紫いも"),
+    "笠岡市": specialties("笠岡ラーメン", "笠岡ベイファームの野菜"),
+    "井原市": specialties("井原デニム", "明治ごんぼう"),
+    "総社市": specialties("総社ドッグ", "赤米"),
+    "高梁市": specialties("備中牛", "ゆべし"),
+    "新見市": specialties("千屋牛", "ピオーネ"),
+    "備前市": specialties("備前焼", "日生かき"),
+    "瀬戸内市": specialties("備前長船刀剣", "冬瓜"),
+    "赤磐市": specialties("白桃", "マスカット"),
+    "真庭市": specialties("蒜山ジャージー乳製品", "蒜山焼そば"),
+    "美作市": specialties("黒豆", "海田茶"),
+    "浅口市": specialties("手延べ麺", "日本酒")
+  },
+  "広島県": {
+    "広島市": specialties("広島お好み焼き", "広島菜漬"),
+    "呉市": specialties("呉海自カレー", "細うどん"),
+    "竹原市": specialties("竹鶴の日本酒", "峠下牛"),
+    "三原市": specialties("三原やっさタコ", "八天堂のくりーむパン"),
+    "尾道市": specialties("尾道ラーメン", "瀬戸田レモン"),
+    "福山市": specialties("くわい", "保命酒"),
+    "府中市": specialties("府中焼き", "府中味噌"),
+    "三次市": specialties("三次ピオーネ", "三次ワイン"),
+    "庄原市": specialties("比婆牛", "東城りんご"),
+    "大竹市": specialties("あたたハマチtoレモン", "小瀬川栗"),
+    "東広島市": specialties("西条酒", "美酒鍋"),
+    "廿日市市": specialties("宮島杓子", "あなごめし"),
+    "安芸高田市": specialties("えびす茶", "夜叉うどん"),
+    "江田島市": specialties("江田島かき", "江田島オリーブ")
+  },
+  "山口県": {
+    "下関市": specialties("ふく料理", "瓦そば"),
+    "宇部市": specialties("宇部ラーメン", "小野茶"),
+    "山口市": specialties("外郎", "徳地やまのいも"),
+    "萩市": specialties("萩焼", "夏みかん"),
+    "防府市": specialties("天神鱧", "防府みそ焼きマイマイ"),
+    "下松市": specialties("牛骨ラーメン", "笠戸ひらめ"),
+    "岩国市": specialties("岩国寿司", "岩国れんこん"),
+    "光市": specialties("虹ケ浜の松林蜂蜜", "瀬戸内の魚介"),
+    "長門市": specialties("長州どり", "仙崎かまぼこ"),
+    "柳井市": specialties("甘露醤油", "柳井縞"),
+    "美祢市": specialties("美東ごぼう", "秋芳梨"),
+    "周南市": specialties("周南たこ", "鹿野高原豚"),
+    "山陽小野田市": specialties("せめんだる", "小野田あさり")
+  },
+  "徳島県": {
+    "徳島市": specialties("徳島ラーメン", "阿波ういろ"),
+    "鳴門市": specialties("鳴門金時", "鳴門わかめ"),
+    "小松島市": specialties("小松島やまもも", "竹ちくわ"),
+    "阿南市": specialties("阿波牛", "すだち"),
+    "吉野川市": specialties("美郷の梅", "川島えびすみそ"),
+    "阿波市": specialties("阿波市のぶどう", "阿波ベジ"),
+    "美馬市": specialties("みまから", "半田そうめん"),
+    "三好市": specialties("祖谷そば", "でこまわし")
+  },
+  "香川県": {
+    "高松市": specialties("讃岐うどん", "高松盆栽"),
+    "丸亀市": specialties("骨付鳥", "丸亀うちわ"),
+    "坂出市": specialties("讃岐塩", "金時いも"),
+    "善通寺市": specialties("善通寺産四角スイカ", "ダイシモチ麦"),
+    "観音寺市": specialties("銭形砂絵もなか", "伊吹いりこ"),
+    "さぬき市": specialties("さぬきワイン", "どじょううどん"),
+    "東かがわ市": specialties("讃岐和三盆", "手袋"),
+    "三豊市": specialties("三豊なす", "たからだ米")
+  },
+  "愛媛県": {
+    "松山市": specialties("坊っちゃん団子", "松山あげ"),
+    "今治市": specialties("今治タオル", "焼豚玉子飯"),
+    "宇和島市": specialties("宇和島鯛めし", "じゃこ天"),
+    "八幡浜市": specialties("八幡浜ちゃんぽん", "みかん"),
+    "新居浜市": specialties("えび天", "白いも"),
+    "西条市": specialties("西条産米", "絹かわなす"),
+    "大洲市": specialties("志ぐれ", "大洲コロッケ"),
+    "伊予市": specialties("削り節", "唐川びわ"),
+    "四国中央市": specialties("水引細工", "里芋"),
+    "西予市": specialties("城川和栗", "宇和米"),
+    "東温市": specialties("どぶろく", "裸麦")
+  },
+  "高知県": {
+    "高知市": specialties("かつおのたたき", "土佐文旦"),
+    "室戸市": specialties("金目鯛", "室戸海洋深層水"),
+    "安芸市": specialties("土佐ジロー", "釜あげちりめん丼"),
+    "南国市": specialties("四方竹", "ごめんケンカシャモ"),
+    "土佐市": specialties("土佐文旦", "宇佐のうるめいわし"),
+    "須崎市": specialties("鍋焼きラーメン", "須崎勘八"),
+    "宿毛市": specialties("土佐文旦", "直七"),
+    "土佐清水市": specialties("清水さば", "宗田節"),
+    "四万十市": specialties("四万十川の青のり", "天然鮎"),
+    "香南市": specialties("山北みかん", "ニラ"),
+    "香美市": specialties("韮生米", "ゆず加工品")
+  }
+};

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#b93b24" />
+  <meta name="description" content="都道府県と市町村から、地域の名産品を手軽に探せるアプリです。" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="stylesheet" href="./styles.css" />
+  <title>全国ご当地名産品検索</title>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand-mark" aria-hidden="true">旬</div>
+      <div>
+        <p class="eyebrow">全国ご当地ガイド</p>
+        <h1>名産品を探す</h1>
+      </div>
+    </header>
+
+    <section class="search-card" aria-labelledby="search-title">
+      <div class="map-accent" aria-hidden="true">日本の“おいしい”を<br />まちから発見。</div>
+      <h2 id="search-title">地域を選んでください</h2>
+      <form id="search-form">
+        <label for="prefecture">都道府県</label>
+        <div class="select-wrap">
+          <select id="prefecture" required>
+            <option value="">都道府県を選択</option>
+          </select>
+        </div>
+
+        <label for="city">市町村</label>
+        <div class="select-wrap">
+          <select id="city" required disabled>
+            <option value="">先に都道府県を選択</option>
+          </select>
+        </div>
+
+        <button type="submit">名産品を検索</button>
+      </form>
+      <p class="hint">日本全国47都道府県・全792市／各市15品のお取り寄せ案内</p>
+    </section>
+
+    <section id="result" class="result-card" aria-live="polite" hidden></section>
+
+    <section class="quick-section" aria-labelledby="quick-title">
+      <div class="section-heading">
+        <h2 id="quick-title">おすすめ地域</h2>
+        <span>すぐに検索</span>
+      </div>
+      <div id="quick-list" class="quick-list"></div>
+    </section>
+
+    <section class="membership-section" aria-labelledby="membership-title">
+      <div class="section-heading membership-heading">
+        <div>
+          <p class="membership-kicker">料金プラン</p>
+          <h2 id="membership-title">使い方に合わせて選べます</h2>
+        </div>
+        <span class="coming-badge">会員受付は準備中</span>
+      </div>
+      <p class="membership-lead">現在の試作版は、広告なしですべて無料でご利用いただけます。会員機能の開始後は、次の2つのプランを予定しています。</p>
+      <div class="plan-list">
+        <article class="plan-card free-plan">
+          <p class="plan-label">無料プラン</p>
+          <p class="plan-price"><strong>0円</strong><span>ずっと無料</span></p>
+          <ul>
+            <li>全国の名産品検索</li>
+            <li>お取り寄せ先の案内</li>
+            <li>画面内に広告を表示</li>
+          </ul>
+        </article>
+        <article class="plan-card supporter-plan">
+          <p class="plan-label">応援会員</p>
+          <p class="plan-price"><strong>100円</strong><span>月額予定</span></p>
+          <ul>
+            <li>全国の名産品検索</li>
+            <li>お取り寄せ先の案内</li>
+            <li>広告なしで快適に利用</li>
+          </ul>
+          <button type="button" disabled>受付準備中</button>
+        </article>
+      </div>
+      <p class="membership-note">※ 有料会員の申込みは、ログイン・安全な決済・会員情報管理の準備が整ってから開始します。</p>
+    </section>
+  </main>
+
+  <template id="product-template">
+    <article class="product">
+      <div class="product-icon" aria-hidden="true"></div>
+      <div>
+        <h3></h3>
+        <p></p>
+        <nav class="order-links" aria-label="お取り寄せ先を探す">
+          <a class="order-rakuten" href="#" target="_blank" rel="noopener noreferrer">楽天市場で探す</a>
+          <a class="order-yahoo" href="#" target="_blank" rel="noopener noreferrer">Yahoo!で探す</a>
+          <a class="order-amazon" href="#" target="_blank" rel="noopener noreferrer">Amazonで探す</a>
+          <a class="order-jatown" href="#" target="_blank" rel="noopener noreferrer">JAタウンで探す</a>
+          <a class="order-furusato" href="#" target="_blank" rel="noopener noreferrer">ふるさとチョイスで探す（ふるさと納税）</a>
+        </nav>
+      </div>
+    </article>
+  </template>
+  <script src="./kyushu-cities.js"></script>
+  <script src="./chugoku-shikoku-cities.js"></script>
+  <script src="./kansai-cities.js"></script>
+  <script src="./chubu-cities.js"></script>
+  <script src="./kanto-cities.js"></script>
+  <script src="./tohoku-cities.js"></script>
+  <script src="./hokkaido-cities.js"></script>
+  <script src="./mie-cities.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
